@@ -33,3 +33,14 @@ Usage:
     Shows the authors in the category.
 
     CATEGORY will default to `DEFAULT`
+
+---------
+
+  The following are pre-loaded categories.
+
+    - unix
+    - ruby
+    - nodejitsu
+    - top
+
+  Feel free to use them!

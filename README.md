@@ -12,6 +12,9 @@ This is useful for module discovery.
 For example you may want to find out what the popular modules are among
 the unix-style nodesters.
 
+After looking at the list you can clearly see you should check out
+tap.
+
 ```
 $ npm-used unix
 
