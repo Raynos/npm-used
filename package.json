@@ -1,0 +1,53 @@
+{
+  "name": "npm-used",
+  "version": "0.1.0",
+  "description": "See with modules are used the most",
+  "keywords": [],
+  "author": "Raynos <raynos2@gmail.com>",
+  "repository": "git://github.com/Raynos/npm-used.git",
+  "main": "index",
+  "homepage": "https://github.com/Raynos/npm-used",
+  "contributors": [
+    {
+      "name": "Jake Verbaten"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Raynos/npm-used/issues",
+    "email": "raynos2@gmail.com"
+  },
+  "dependencies": {
+    "npm": "~1.1.62",
+    "optimist": "~0.3.4",
+    "chain-stream": "~0.1.2",
+    "kv": "git://github.com/Raynos/kv.git#no-throw",
+    "mkdirp": "~0.3.4",
+    "read-stream": "~0.4.2",
+    "write-stream": "~0.4.1",
+    "mapping-stream": "~0.1.0",
+    "from-source": "~0.1.0",
+    "prop": "~0.1.1",
+    "map-async": "~0.1.0",
+    "ap": "~0.1.0",
+    "for-each": "~0.1.0",
+    "semver": "~1.0.14",
+    "alists": "0.0.2",
+    "colors": "~0.6.0-1"
+  },
+  "devDependencies": {
+    "tap": "~0.3.1",
+    "pause-stream": "0.0.4"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/Raynos/npm-used/raw/master/LICENSE"
+    }
+  ],
+  "bin": {
+    "npm-used": "./bin/npm-used.js"
+  },
+  "scripts": {
+    "test": "tap --stderr --tap ./test"
+  }
+}
