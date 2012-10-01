@@ -75,6 +75,17 @@ Popular DevDependencies
     assertions : 8
 ```
 
+## Default categories
+
+`npm-used` comes with the following preloaded categories
+
+ - unix (people like substack)
+ - ruby (people like TJ)
+ - nodejitsu (nodejitsu folk)
+ - top (the top 10)
+
+I could use help finding [better default categories][1]. PR Welcome
+
 ## Docs
 
 `$ npm-used --help`
@@ -88,3 +99,5 @@ Popular DevDependencies
  - Raynos
 
 ## MIT Licenced
+
+  [1]: https://github.com/Raynos/npm-used/blob/master/lib/getAuthors.js#L3
