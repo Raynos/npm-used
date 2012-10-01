@@ -1,0 +1,35 @@
+Usage:
+
+  npm-used CATEGORY OPTIONS
+
+    Shows you a list of the most dependended on modules from the people
+    in the category choosen.
+
+    CATEGORY defaults to `DEFAULT` which by default is an empty category
+
+    OPTIONS
+      --help : your looking at it
+
+---------
+
+  npm-used add AUTHOR CATEGORY
+
+    Adds the author (this should be an npm owner name) to the CATEGORY
+
+    CATEGORY will default to `DEFAULT`
+
+---------
+
+  npm-used rm AUTHOR CATEGORY
+
+    Removes the author from the CATEGORY
+
+    CATEGORY will default to `DEFAULT`
+
+---------
+
+  npm-used ls CATEGORY
+
+    Shows the authors in the category.
+
+    CATEGORY will default to `DEFAULT`
