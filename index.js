@@ -1,10 +1,8 @@
 var used = require("./commands/used")
-    , add = require("./commands/add")
-    , rm = require("./commands/rm")
-    , ls = require("./commands/ls")
+    , communities = require("node-communities")
 
-used.add = add
-used.rm = rm
-used.ls = ls
+used.add = communities.add
+used.rm = communities.rm
+used.ls = communities.ls
 
 module.exports = used

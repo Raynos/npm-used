@@ -20,25 +20,20 @@
     "npm": "~1.1.62",
     "optimist": "~0.3.4",
     "chain-stream": "~0.1.2",
-    "kv": "git://github.com/Raynos/kv.git#no-throw",
-    "mkdirp": "~0.3.4",
-    "read-stream": "~0.4.2",
-    "write-stream": "~0.4.1",
-    "mapping-stream": "~0.1.0",
-    "from-source": "~0.1.0",
+    "from-source": "~1.0.0",
     "prop": "~0.1.1",
-    "map-async": "~0.1.0",
-    "ap": "~0.1.0",
     "for-each": "~0.1.0",
     "semver": "~1.0.14",
     "alists": "0.0.2",
     "colors": "~0.6.0-1",
-    "filed": "0.0.7"
+    "filed": "0.0.7",
+    "node-communities": "~0.1.1",
+    "read-promise": "~0.1.0",
+    "ready-signal": "~0.1.0",
+    "iterators": "~0.3.0",
+    "not": "~0.1.0"
   },
-  "devDependencies": {
-    "tap": "~0.3.1",
-    "pause-stream": "0.0.4"
-  },
+  "devDependencies": {},
   "licenses": [
     {
       "type": "MIT",
