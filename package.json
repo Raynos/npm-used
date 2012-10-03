@@ -28,10 +28,12 @@
     "colors": "~0.6.0-1",
     "filed": "0.0.7",
     "node-communities": "~0.1.1",
-    "read-promise": "~0.1.0",
     "ready-signal": "~0.1.0",
     "iterators": "~0.3.0",
-    "not": "~0.1.0"
+    "not": "~0.1.0",
+    "cached-operation": "~0.1.1",
+    "xtend": "~1.0.3",
+    "reduce": "~0.1.0"
   },
   "devDependencies": {},
   "licenses": [

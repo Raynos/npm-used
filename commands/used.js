@@ -3,10 +3,9 @@ var colors = require("colors")
     , getAuthors = communities.get
     , DEFAULT = communities.DEFAULT
     , Ready = require("ready-signal")
-    , toList = require("alists").toList
-    , forEach = require("for-each")
     , prop = require("prop")
     , not = require("not")
+    , reduce = require("reduce")
 
     , getDependenciesCount = require("../lib/getDependenciesCount")
 
@@ -22,43 +21,35 @@ function used(category) {
     getAuthors(category, printAuthors)
 
     getDependenciesCount(category).toArray(function (list) {
-        console.log("entire list", list.length)
-
-        var values = list.reduce(function (acc, value) {
-            var name = value.name
-            if (acc[name]) {
+        var items = reduce(list.reduce(function (acc, value) {
+                var name = value.name
                 if (value.isDev) {
-                    acc[name].isDev = true
+                    name = "dev" + name
                 }
 
-                acc[name].count++
-            } else {
-                acc[name] = value
-                value.count = 1
-            }
+                if (acc[name]) {
+                    acc[name].count++
+                } else {
+                    acc[name] = value
+                    value.count = 1
+                }
 
-            return acc
-        }, {})
+                return acc
+            }, {}), function (acc, value) {
+                value.displayString = value.name.green + " : " +
+                    value.count.toString().cyan
 
-        forEach(values, function (value) {
-            value.displayString = value.name.green + " : " +
-                value.count.toString().cyan
-        })
-
-        var items = Object.keys(values).map(function (key) {
-                return values[key]
-            }).sort(byNumber)
+                return acc.concat(value)
+            }, []).sort(byNumber)
             , dev = items
                 .filter(prop("isDev"))
-                .map(function (item) {
-                    return item.displayString
-                })
+                .map(prop("displayString"))
+                .slice(0, 15).join("\n\t")
 
             , notDev = items
                 .filter(not(prop("isDev")))
-                .map(function (item) {
-                    return item.displayString
-                })
+                .map(prop("displayString"))
+                .slice(0, 15).join("\n\t")
 
         printReady(printNumbers)
 
@@ -66,10 +57,8 @@ function used(category) {
             console.log("\nA total of", items.length.toString().green
                 , "dependencies were found\n")
 
-            console.log("\nPopular Dependencies"
-                , "\n\n\t" + notDev.slice(0, 15).join("\n\t"), "\n")
-            console.log("Popular DevDependencies"
-                , "\n\n\t" + dev.slice(0, 15).join("\n\t"), "\n")
+            console.log("\nPopular Dependencies", "\n\n\t" + notDev, "\n")
+            console.log("Popular DevDependencies", "\n\n\t" + dev, "\n")
         }
     })
 
